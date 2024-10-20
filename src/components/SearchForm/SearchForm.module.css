@@ -1,0 +1,20 @@
+.form{
+margin-top: 30px;
+display: flex;
+gap: 20px;
+align-items: stretch;
+}
+.input{
+width: 200px;
+padding: 10px 6px;
+outline: transparent;
+}
+.btn{
+background-color: rgb(65, 63, 63);
+border: 0.5px solid rgb(148, 141, 141);
+}
+.btn:hover,
+.btn:focus {
+    border-color: white;
+    outline: transparent;
+}

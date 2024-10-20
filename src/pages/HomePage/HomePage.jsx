@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../../api/tmdb-api';
-import styles from './HomePage.module.css';
-import { Link } from 'react-router-dom';
 import MovieList from '../../components/MovieList/MovieList';
+import Loader from '../../components/Loader/Loader';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
     const [movies, setMovies] = useState(null);
@@ -11,27 +13,25 @@ const HomePage = () => {
 
     useEffect(() => {
         const fetchTrendingMovies = async () => {
-            
             try{
                 setLoader(true);
-
                 const { data }= await getTrendingMovies();
                 setMovies(data.results);
-                console.log(data.results)
             } catch (error){
-                setError(error.message);
+                setError(error);
             } finally {
                 setLoader(false)
             }
         }
 
         fetchTrendingMovies();
-        console.log(movies)
     }, []);
 
   return (
     <div>
-        <h1>Trending today</h1>
+        <h1 className={styles.title}>Trending today</h1>
+        {loader && <Loader/>}
+        {error && <ErrorMessage />}
     {movies !== null && <MovieList movies={movies} />}
     </div>
   )

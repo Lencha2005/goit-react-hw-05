@@ -9,36 +9,32 @@ const instance = axios.create({
     },
   });
 
+const axiosOptions = {
+    params: {
+        include_adult: false,
+        language: 'en-US', 
+    }
+}
+
 export const getTrendingMovies = async () => {
- return await instance.get('/trending/all/day');
+ return await instance.get('/trending/movie/day', axiosOptions);
 }
 
 export const getSearchMovies = async (searchValue) => {
-    const axiosOptions = {
-        params: {
-            query: searchValue,
-            include_adult: false,
-            language: 'en-US',
-        }
-    };
+    axiosOptions.params.query = searchValue;
 
     return await instance.get('/search/movie', axiosOptions)
-
 }
 
 export const getMovieById = async (movie_id) => {
-    const axiosOptions = {
-        params: {
-            // include_adult: false,
-            language: 'en-US',
-            page: 1,
-        }
-    };
     return await instance.get(`/movie/${movie_id}`, axiosOptions);
 }
 
-export const getImage = async () => {
-    return instance.get('/configuration');
+export const getMovieCredits = async (movie_id) => {
+    return await instance.get(`/movie/${movie_id}/credits`, axiosOptions);
 }
 
+export const getMovieReviews = async (id) => {
+    return await instance.get(`/movie/${id}/reviews`, axiosOptions);
+}
 

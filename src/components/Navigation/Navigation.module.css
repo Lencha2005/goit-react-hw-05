@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid white;
+    /* background-color: rgb(81, 75, 75); */
+}
+.link {
+font-size: 20px;
+color: white;
+transition: color 250 ms ease-in-out;
+}
+.active {
+    color: rgb(145, 100, 235);
+}

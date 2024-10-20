@@ -1,0 +1,33 @@
+.div{
+    padding-top: 30px;
+}
+.btn{
+    margin-bottom: 20px;
+    background-color: rgb(65, 63, 63);
+    border: 0.5px solid rgb(148, 141, 141);
+}
+.btn:hover,
+.btn:focus {
+    border-color: white;
+    outline: transparent;
+}
+.wrap{
+    display: flex;
+    gap: 30px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgb(140, 137, 137);
+}
+.img{
+    width: 250px;
+}
+.list{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.link:hover,
+.link:focus {
+    color: white;
+}

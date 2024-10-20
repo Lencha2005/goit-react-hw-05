@@ -1,0 +1,7 @@
+.link {
+    transition: color 250ms ease-in-out;
+}
+.link:hover,
+.link:focus {
+    color: white;
+}
