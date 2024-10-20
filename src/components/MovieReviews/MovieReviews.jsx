@@ -29,7 +29,7 @@ const MovieReviews = () => {
     };
     };
     fetchMovieReviews();
-  }, []);
+  }, [movieId]);
 
   return (
     <div>

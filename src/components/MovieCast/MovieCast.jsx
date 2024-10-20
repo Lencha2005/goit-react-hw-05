@@ -31,7 +31,7 @@ const MovieCast = () => {
 
  };
  fetchMovieCast();
-},[]);
+},[movieId]);
 
   return (
     <div className={styles.wrap}>
